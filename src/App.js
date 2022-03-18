@@ -1,10 +1,13 @@
 import './App.css';
+import { Container, Stack } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      Hello
-    </div>
+    <Container>
+     <Stack direction='horizontal' gap={2} className='mb-4'>
+       
+     </Stack>
+    </Container>
   );
 }
 
