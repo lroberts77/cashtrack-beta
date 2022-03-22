@@ -1,4 +1,4 @@
-import { Card, ProgressBar } from "react-bootstrap";
+import { Card, ProgressBar, Stack, Button } from "react-bootstrap";
 import { currencyFormatter } from "../../utils";
 
 const BudgetCard = ({ name, amount, max }) => {
@@ -16,6 +16,10 @@ const BudgetCard = ({ name, amount, max }) => {
                 max={max}
                 now={amount}
             />
+            <Stack direction='horizontal' gap='2' className='mt-4'>
+                <Button>Add Expense</Button>
+                <Button>View Expense</Button>
+            </Stack>
         </Card.Body>
     </Card>
   )
