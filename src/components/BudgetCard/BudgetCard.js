@@ -5,7 +5,7 @@ const BudgetCard = ({ name, amount, max }) => {
   return (
     <Card>
         <Card.Body>
-            <Card.Title>
+            <Card.Title className="d-flex justify-content-between align-itmes-baseline fw-normal mb-3">
                 <div>{name}</div>
                 <div>{currencyFormatter.format(amount)} / {currencyFormatter.format(max)}</div>
             </Card.Title>
