@@ -17,8 +17,8 @@ const BudgetCard = ({ name, amount, max }) => {
                 now={amount}
             />
             <Stack direction='horizontal' gap='2' className='mt-4'>
-                <Button>Add Expense</Button>
-                <Button>View Expense</Button>
+                <Button variant='outline-primary' className="ms-auto">Add Expense</Button>
+                <Button variant='outline-secondary'>View Expense</Button>
             </Stack>
         </Card.Body>
     </Card>
