@@ -11,7 +11,7 @@ const BudgetCard = ({ name, amount, max, gray }) => {
     }
 
   return (
-    <Card>
+    <Card className={classNames.join(' ')}>
         <Card.Body>
             <Card.Title className="d-flex justify-content-between align-itmes-baseline fw-normal mb-3">
                 <div className="me-2">{name}</div>
