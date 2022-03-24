@@ -22,16 +22,23 @@ export const useBudgets = () => {
 export const BudgetsProvider = ({ children }) => {
 
     const [budgets, setBudgets] = useState([]);
-    const [expenses, setexpenses] = useState([]);
+    const [expenses, setExpenses] = useState([]);
 
     function getBudgetExpenses(budgetId) {
-        return expenses.filter(exoense => expenses.budgetId === budgetId)
+        return expenses.filter(expense => expense.budgetId === budgetId)
     }
-    function addExpense() {
-
+    function addExpense({ description, amount, budgetId}) {
+        setExpenses(prevExpenses => {
+            return [...prevExpenses, { id: uuidV4(), description, amount, budgetId }]
+        })
     }
-    function addBudget() {
-
+    function addBudget({ name, max }) {
+        setBudgets(prevBudgets => {
+            if (prevBudgets.find(budget => budget.name === name)) {
+                return prevBudgets
+            }
+            return [...prevBudgets, { id: uuidV4(), name, max }]
+        })
     }
     function deleteBudget() {
 
