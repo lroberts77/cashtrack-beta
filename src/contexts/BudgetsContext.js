@@ -41,6 +41,7 @@ export const BudgetsProvider = ({ children }) => {
         })
     }
     function deleteBudget({ id }) {
+        // also need to handle uncategorized expenses
         setBudgets(prevBudgets => {
             return prevBudgets.filter(budget => budget.id !== id)
         })
