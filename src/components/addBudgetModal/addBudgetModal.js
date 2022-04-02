@@ -1,3 +1,4 @@
+import { Button } from "bootstrap";
 import { Form, Modal } from "react-bootstrap";
 
 const addBudgetModal = ({ show, handleClose }) => {
@@ -16,6 +17,11 @@ const addBudgetModal = ({ show, handleClose }) => {
             <Form.Label>Maximum Spending</Form.Label>
             <Form.Control type='number' required min={0} step={0.01} />
           </Form.Group>
+          <div className="d-flex justify-content-end">
+            <Button variant='primary' type='submit'>
+              Add
+            </Button>  
+          </div>
         </Modal.Body>
       </Form>
     </Modal>
