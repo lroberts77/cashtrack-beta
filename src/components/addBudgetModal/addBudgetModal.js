@@ -1,7 +1,6 @@
-import { Button } from "bootstrap";
-import { Form, Modal } from "react-bootstrap";
+import { Form, Modal, Button } from "react-bootstrap";
 
-const addBudgetModal = ({ show, handleClose }) => {
+const AddBudgetModal = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Form onSubmit={handleSubmit}>
@@ -28,4 +27,4 @@ const addBudgetModal = ({ show, handleClose }) => {
   );
 };
 
-export default addBudgetModal;
+export default AddBudgetModal;
