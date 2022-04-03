@@ -6,11 +6,11 @@ const AddBudgetModal = ({ show, handleClose }) => {
 
   const nameRef = useRef();
   const maxRef = useRef();
-  const { AddBudget } = useBudgets()
+  const { addBudget } = useBudgets()
 
   const handleSubmit = (e) => {
       e.preventDefault()
-      AddBudget(
+      addBudget(
       {
           name: nameRef.current.value,
           max: parseFloat(maxRef.current.value),
