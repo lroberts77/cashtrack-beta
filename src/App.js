@@ -1,8 +1,12 @@
 import { Container, Button, Stack } from "react-bootstrap";
 import AddBudgetModal from "./components/addBudgetModal/AddBudgetModal";
 import BudgetCard from "./components/BudgetCard/BudgetCard";
+import { useState } from "react";
 
 function App() {
+
+  const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
+
   return (
     <>
     <Container className="my-4">
@@ -22,7 +26,7 @@ function App() {
         <BudgetCard name='Entertainment' amount={2200} max={2000}></BudgetCard>
       </div>
     </Container>
-    <AddBudgetModal show />
+    <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)}/>
     </>
   );
 }
