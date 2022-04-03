@@ -22,7 +22,7 @@ function App() {
         <BudgetCard name='Entertainment' amount={2200} max={2000}></BudgetCard>
       </div>
     </Container>
-    <AddBudgetModal />
+    <AddBudgetModal show />
     </>
   );
 }

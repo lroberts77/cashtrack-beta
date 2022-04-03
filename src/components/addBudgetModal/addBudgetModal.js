@@ -1,6 +1,14 @@
-import { Form, Modal, Button } from "react-bootstrap";
+import { useRef } from "react";
+import { Form, Modal, Button } from "react-boots
 
 const AddBudgetModal = ({ show, handleClose }) => {
+
+    const nameRef = useRef();
+    const maxRef = useRef();
+    const handleSubmit = (e) => {
+
+    } 
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Form onSubmit={handleSubmit}>
