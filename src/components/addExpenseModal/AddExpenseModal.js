@@ -24,16 +24,26 @@ const AddExpenseModal = ({ show, handleClose, defaultBudgetId }) => {
     <Modal show={show} onHide={handleClose}>
       <Form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title>New Budget</Modal.Title>
+          <Modal.Title>New Expense</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form.Group className="mb-3" controlId="name">
-            <Form.Label>Name</Form.Label>
-            <Form.Control ref={nameRef} type='text' required />
+          <Form.Group className="mb-3" controlId="description">
+            <Form.Label>Description</Form.Label>
+            <Form.Control ref={descriptionRef} type='text' required />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="max">
-            <Form.Label>Maximum Spending</Form.Label>
-            <Form.Control ref={maxRef} type='number' required min={0} step={0.01} />
+          <Form.Group className="mb-3" controlId="amount">
+            <Form.Label>Amount</Form.Label>
+            <Form.Control ref={amountRef} type='number' required min={0} step={0.01} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="budgetId">
+            <Form.Label>Budget</Form.Label>
+            <Form.Select defaultValue={defaultBudgetId} ref={budgetIdRef} >
+              {budgets.map(budget => (
+                <option key={budget.id} value={budget.id}>
+                  {budget.name}
+                </option>
+              ))}
+            </Form.Select>
           </Form.Group>
           <div className="d-flex justify-content-end">
             <Button variant='primary' type='submit'>
