@@ -8,7 +8,14 @@ import { useBudgets } from "./contexts/BudgetsContext";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
+  const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
+  const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
   const { budgets, getBudgetExpenses } = useBudgets();
+
+  const openAddExpenseModal = (budgetId) => {
+    setShowAddBudgetModal(true)
+    setAddExpenseModalBudgetId(budgetId)
+  }
 
   return (
     <>
@@ -18,7 +25,7 @@ function App() {
           <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>
             Add Budget
           </Button>
-          <Button variant="outline-primary">Add Expense</Button>
+          <Button variant="outline-primary" onClick={openAddExpenseModal}>Add Expense</Button>
         </Stack>
         <div
           style={{
@@ -39,6 +46,7 @@ function App() {
                 name={budget.name}
                 amount={amount}
                 max={budget.max}
+                onAddExpenseClick={() => openAddExpenseModal(budget.id)}
               />
             );
           })}
