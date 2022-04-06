@@ -13,7 +13,7 @@ function App() {
   const { budgets, getBudgetExpenses } = useBudgets();
 
   const openAddExpenseModal = (budgetId) => {
-    setShowAddBudgetModal(true)
+    setShowAddExpenseModal(true)
     setAddExpenseModalBudgetId(budgetId)
   }
 
@@ -57,8 +57,9 @@ function App() {
         handleClose={() => setShowAddBudgetModal(false)}
       />
       <AddExpenseModal
-        show={true}
-        // handleClose={() => setShowAddExpenseModal(false)}
+        show={showAddExpenseModal}
+        defaultBudgetId={addExpenseModalBudgetId}
+        handleClose={() => setShowAddExpenseModal(false)}
       />
     </>
   );
