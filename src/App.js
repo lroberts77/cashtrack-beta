@@ -4,6 +4,7 @@ import AddExpenseModal from "./components/addExpenseModal/AddExpenseModal";
 import BudgetCard from "./components/BudgetCard/BudgetCard";
 import { useState } from "react";
 import { useBudgets } from "./contexts/BudgetsContext";
+import { UncategorizedBudgetCard } from "./components/uncategorizedBudgetCard/UncategorizedBudgetCard";
 
 
 function App() {
