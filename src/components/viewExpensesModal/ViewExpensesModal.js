@@ -1,9 +1,13 @@
 import { Modal, Button } from "react-bootstrap";
-import { useBudgets } from "../../contexts/BudgetsContext";
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "../../contexts/BudgetsContext";
 
-const ViewExpensesModal = ({ show, handleClose }) => {
+const ViewExpensesModal = ({ budgetId, handleClose }) => {
 
   const { getBudgetExpenses, budgets, deleteBudgets, deleteExpense } = useBudgets()
+
+  const budget = UNCATEGORIZED_BUDGET_ID === budgetId ? 
+  { name:"Uncategorized", id: UNCATEGORIZED_BUDGET_ID} :
+  budgets.find(b => b.id === budgetId)
 
   return (
     <Modal show={budgetId != null} onHide={handleClose}>
